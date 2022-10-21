@@ -19,12 +19,12 @@ public class MoveBackAndForth : MonoBehaviour
         GetComponent<MoveObjects>().enabled = false; // Keep this line and don't change it.
         
         //DIRECTIONS: Uncomment the lines below and fix them
-        //startPositions = new Something;
-        //endPositions = new Something;
-        //foreach(something in Something)
+        startPositions = new startPosition;
+        endPositions = new endPosition;
+        foreach(ObjectToMove in ObjectsToMove)
         //{
-        //    someList.Add(something.transform.position); // one of these lists needs this kind of position...
-        //    thisOtherList.Add(something.transform.position + new Vector3(0,0,10f)); // another one needs another...
+            someList.Add(ObjectsToMove.transform.position); // one of these lists needs this kind of position...
+            thisOtherList.Add(ObjectsToMove.transform.position + new Vector3(0,0,10f)); // another one needs another...
         //}
     }
 
@@ -32,10 +32,10 @@ public class MoveBackAndForth : MonoBehaviour
     void Update()
     {
         //DIRECTIONS: Uncomment the lines below and fix them
-        //for (something; something.Count something; something)
-        //{
-        //    someList[something].transform.position = Vector3.Lerp(someOtherList[something], aThirdList[something], lerpAmount);
-        //}
+        for (int i=0; i < ObjectsToMove.Count; i++)
+        {
+            ObjectsToMove[i].transform.position = Vector3.Lerp(someOtherList[i], aThirdList[i], lerpAmount);
+        }
 
         //Don't change anything below here!
         lerpAmount += moveAmount;
